@@ -1,0 +1,12 @@
+{
+  "scripts": {
+    "updateTop100in2weeks" : "node ./scripts/update/top100in2weeks.js"
+  },
+  "devDependencies": {
+    "cheerio": "0.22.0",
+    "dotenv": "2.0.0",
+    "leancloud-storage": "1.5.2",
+    "lodash": "4.17.2",
+    "request": "2.79.0"
+  }
+}
