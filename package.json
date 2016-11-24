@@ -1,12 +1,32 @@
 {
   "scripts": {
-    "updateTop100in2weeks" : "node ./scripts/update/top100in2weeks.js"
+    "updateTop100in2weeks": "node ./scripts/update/top100in2weeks.js",
+    "start": "webpack-dev-server --devtool eval --progress --hot --content-base src"
   },
   "devDependencies": {
+    "babel-core": "6.18.2",
+    "babel-loader": "6.2.8",
+    "babel-preset-es2015": "6.18.0",
+    "babel-preset-react": "6.16.0",
     "cheerio": "0.22.0",
+    "css-loader": "0.26.0",
     "dotenv": "2.0.0",
     "leancloud-storage": "1.5.2",
     "lodash": "4.17.2",
-    "request": "2.79.0"
+    "request": "2.79.0",
+    "style-loader": "0.13.1",
+    "webpack-dev-server": "1.16.2"
+  },
+  "dependencies": {
+    "jquery": "3.1.1",
+    "jumpstate": "1.0.4",
+    "leancloud-storage": "1.5.2",
+    "lodash": "4.17.2",
+    "react": "15.4.1",
+    "react-dom": "15.4.1",
+    "react-redux": "4.4.6",
+    "redux": "3.6.0",
+    "redux-logger": "2.7.4",
+    "redux-thunk": "2.1.0"
   }
 }
