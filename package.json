@@ -1,7 +1,7 @@
 {
   "scripts": {
     "updateTop100in2weeks": "node ./scripts/update/top100in2weeks.js",
-    "start": "webpack-dev-server --devtool eval --progress --hot --content-base src"
+    "start": "webpack-dev-server --devtool eval --progress --hot --content-base src --config ./configs/webpack.development.config.js"
   },
   "devDependencies": {
     "babel-core": "6.18.2",
