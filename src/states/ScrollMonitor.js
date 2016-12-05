@@ -1,7 +1,7 @@
 import { State, Effect, Actions, getState } from 'jumpstate'
 
-const HEADER_HEIGHT = 76
-const ITEM_VIDEO_HEIGHT = 281
+const HEADER_HEIGHT = 103
+const ITEM_VIDEO_HEIGHT = 410
 
 export default State({
   initial: {

@@ -34,7 +34,8 @@ class View extends Component {
       <video
         ref="video"
         autoPlay={autoplay}
-        width="320" height="240" controls preload="none">
+        poster={this.props.poster}
+        width="480" height="270" controls preload="none">
         { this.props.children }
       </video>
     )

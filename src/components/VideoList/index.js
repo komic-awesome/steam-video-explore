@@ -5,6 +5,9 @@ import { Actions } from 'jumpstate'
 
 import VideoItem from 'components/VideoItem'
 
+let style = {
+  color: 'white'
+}
 class View extends Component {
   componentWillMount() {
     Actions.fetchVideoList()
@@ -12,7 +15,7 @@ class View extends Component {
 
   render() {
     if (!this.props.list.length) {
-      return <div>加载中...</div>
+      return <div style={ style }>加载中...</div>
     }
     return (
       <div>

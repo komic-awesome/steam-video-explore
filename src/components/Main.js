@@ -7,9 +7,21 @@ import rootReducer from '../states/index'
 
 const store = configureStore()
 
-const containerStyle = {
-  width: 600
-, margin: '0 auto'
+let styles = {
+  wrapper: {
+    backgroundColor: '#0e2439',
+    minHeight: '100vh',
+  },
+  content: {
+    width: 600,
+    margin: '0 auto',
+  },
+  header: {
+    padding: 30,
+    textAlign: 'center',
+    color: 'white',
+    fontSize: 26,
+  }
 }
 
 export default class Main extends Component {
@@ -17,9 +29,13 @@ export default class Main extends Component {
     return (
       <Provider store={store}>
         <ScrollMonitor>
-          <div style={containerStyle}>
-            <h1>看视频找游戏</h1>
-            <VideoList />
+          <div style={ styles.wrapper }>
+            <div style={ styles.content }>
+              <h1 style={ styles.header }>
+                Steam 双周内最佳游戏
+              </h1>
+              <VideoList />
+            </div>
           </div>
         </ScrollMonitor>
       </Provider>
