@@ -48,7 +48,7 @@ class View extends Component {
       , content = item.get('content')
       , movie = content.movies[0]
       , gameName = content.name
-      , gameUrl = `https://steamcommunity.com/app/${item.get('appid')}`
+      , gameUrl = `http://store.steampowered.com/app/${item.get('appid')}`
 
     let video = (
       <Video
