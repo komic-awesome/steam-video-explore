@@ -17,17 +17,20 @@ function saveAppDetailToAvos(appid, appdetailResult) {
     .then(() => {
       let query = Avos.query('appdetails')
       query.equalTo('appid', appid)
-      return query.find()
+      return query.first()
     })
     .then((results) => {
-      if (results.length
+      if (results
         || !result[appid].success // http://store.steampowered.com/api/appdetails/?appids=292730&&cc=CN
-      ) { return Promise.resolve() }
+      ) { return Promise.resolve(results) }
 
       let appDetails = Avos.object('appdetails')
       appDetails.set('appid', appid)
       appDetails.set('content', result[appid].data)
-      return appDetails.save()
+
+      return appDetails.save().then(() => {
+        return appDetails
+      })
     })
 }
 

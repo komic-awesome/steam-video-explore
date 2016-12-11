@@ -33,16 +33,21 @@ fetchTop100in2weeks()
     }).map((info) => { return info.appid })
   })
   .then((appids) => {
-    return saveTop100in2weeks(appids).then(() => {
-      let length = appids.length
-      return promiseWhile(
-        () => { return appids.length }
-      , () => {
-          let appid = appids.pop()
-          return saveAppDetail(appid)
-        }
-      , Promise.resolve()
-      )
+    let appDetails = []
+    let length = appids.length
+
+    return promiseWhile(
+      () => { return appids.length }
+    , () => {
+        let appid = appids.pop()
+
+        return saveAppDetail(appid).then((appDetail) => {
+          appDetails.push(appDetail)
+        })
+      }
+    , Promise.resolve()
+    ).then(() => {
+      return saveTop100in2weeks(appDetails)
     })
   })
   .then(() => {

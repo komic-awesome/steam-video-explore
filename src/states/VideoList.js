@@ -13,17 +13,19 @@ let VideoListState = State({
 
 Effect('fetchVideoList', () => {
 
-  var detailsQuery = new AV.Query('appdetails')
-
-  detailsQuery.descending('createdAt')
-  detailsQuery.find()
-    .then(
-      (result) => {
-        VideoListState.loadVideoListSuccess(result)
-        Actions.viewportChanged()
-      },
-      () => { Actions.ajaxError() }
-    )
+  let top100in2weeks = new AV.Query('top100in2weeks')
+  top100in2weeks.first().then((apps) => {
+    let relation = apps.relation('containedApp')
+    let query = relation.query();
+    query.find()
+      .then(
+        (result) => {
+          VideoListState.loadVideoListSuccess(result)
+          Actions.viewportChanged()
+        },
+        () => { Actions.ajaxError() }
+      )
+  })
 
 })
 
