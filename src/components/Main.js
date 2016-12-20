@@ -32,7 +32,7 @@ export default class Main extends Component {
           <div style={ styles.wrapper }>
             <div style={ styles.content }>
               <h1 style={ styles.header }>
-                Steam 双周内最佳游戏
+                Steam 当前促销游戏
               </h1>
               <VideoList />
             </div>

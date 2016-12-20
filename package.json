@@ -23,6 +23,7 @@
     "jumpstate": "1.0.4",
     "leancloud-storage": "1.5.2",
     "lodash": "4.17.2",
+    "node-phantom": "0.2.5",
     "radium": "0.18.1",
     "react": "15.4.1",
     "react-dom": "15.4.1",

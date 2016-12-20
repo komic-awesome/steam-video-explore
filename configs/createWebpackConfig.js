@@ -28,7 +28,12 @@ module.exports = function(environment) {
   if (environment === 'production') {
     configs = Object.assign(configs, {
       plugins: [
-        new webpack.optimize.UglifyJsPlugin({
+        new webpack.DefinePlugin({
+          'process.env': {
+            NODE_ENV: JSON.stringify('production')
+          }
+        })
+      , new webpack.optimize.UglifyJsPlugin({
           compress: { warnings: false }
         })
       ]

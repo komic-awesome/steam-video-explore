@@ -13,8 +13,9 @@ let VideoListState = State({
 
 Effect('fetchVideoList', () => {
 
-  let top100in2weeks = new AV.Query('top100in2weeks')
-  top100in2weeks.first().then((apps) => {
+  let collection = new AV.Query('steamdbSales')
+  collection.descending('createdAt')
+  collection.first().then((apps) => {
     let relation = apps.relation('containedApp')
     let query = relation.query();
     query.find()

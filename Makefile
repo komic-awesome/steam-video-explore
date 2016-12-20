@@ -3,7 +3,7 @@ clean:
 
 build: clean
 	mkdir build
-	NODE_ENV=production webpack --config ./configs/webpack.production.config.js
+	webpack --config ./configs/webpack.production.config.js
 	cp ./src/index.html ./build/index.html
 
 deploy: build
